@@ -1,95 +1,74 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image'
+import airplaneSvg from './assets/airplane.svg'
+import logoSvg from './assets/logo.svg'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main>
+      <section
+        id="hero"
+        className="p-8 mx-auto w-full h-screen flex flex-col max-w-screen-xl"
+      >
+        <nav className="flex w-full items-center justify-between">
+          <Link href="/">
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              className="h-14 w-14"
+              src={logoSvg}
+              alt="Logomarca da AirPlanner"
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+          </Link>
+          <div className="flex gap-8 items-center">
+            <Link
+              href="#hero"
+              className="font-medium text-stone-700 hover:text-fuchsia-500 transition-colors"
+            >
+              Preço
+            </Link>
+            <Link
+              href="#hero"
+              className="font-medium text-stone-700 hover:text-fuchsia-500 transition-colors"
+            >
+              Sobre
+            </Link>
+            <Link
+              href="#hero"
+              className="font-medium text-stone-700 hover:text-fuchsia-500 transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
+              href="#hero"
+              className="font-medium px-5 py-3 text-white bg-fuchsia-500 hover:bg-fuchsia-700 rounded-full transition-colors"
+            >
+              Começar
+            </Link>
+          </div>
+        </nav>
+        <div className="items-center flex justify-between w-full mt-8">
+          <div>
+            <h1 className="text-left font-black text-7xl text-stone-800">
+              Planeje sua viagem com{' '}
+              <span className="text-fuchsia-500">AirPlanner</span>.
+            </h1>
+            <p className="text-lg text-stone-700 font-bold mt-8">
+              Nunca foi tão fácil planejar uma viagem.
+              <br /> Faça tudo de forma eficaz e sem dor de cabeça
+            </p>
+          </div>
+          <Image
+            className="w-full max-w-3xl"
+            src={airplaneSvg}
+            alt="Plane illustration"
+          />
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="#hero"
+          className="font-medium w-fit mx-auto px-5 py-3 text-white bg-fuchsia-500 hover:bg-fuchsia-700 rounded-full transition-colors mt-[-60px]"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+          Comece agora
+        </Link>
+      </section>
+    </main>
+  )
 }
